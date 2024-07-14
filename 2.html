@@ -1,0 +1,51 @@
+<html>
+    <head>
+     <style>
+        .block{
+            display:none;
+        }
+        .ko{
+            display:block;
+            
+        }
+     </style>
+    </head>
+    <body>
+        <div id="product">
+            <div class="p_card">
+                <img src="">
+                <p class="p1">KIO</p>
+                <p class="block">neo</p>
+            </div>
+            <div class="p_card">
+                <img>
+                <p class="p1">Pods</p>
+                <p class="block">Neo1</p>
+            </div>
+            <div class="p_card">
+                <img>
+                <p class="p1">Headphone</p>
+                <p class="block">Neo2</p>
+            </div>
+        <script type="text/javascript">
+            const product=document.getElementById('product');
+            const card=product.querySelectorAll('.p_card');
+            console.log(card)
+            for (let ca of card){
+                console.log(ca)
+                ca.addEventListener('mouseover',()=>{
+                    const image=ca.getElementsByTagName('img');
+                    const pa=ca.querySelector('.p1');
+                    const pa2=ca.querySelector('.block');
+                    image.style.transform='scale(1.2)';
+                    pa2.style.display='block';
+                })     
+                ca.addEventListener('mouseout',()=>{
+                const pa2=ca.querySelector('.block');
+                pa2.style.display='none';
+                })                   }            
+
+        </script>
+        </div>
+    </body>
+</html>
